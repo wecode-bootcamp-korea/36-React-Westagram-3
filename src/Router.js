@@ -9,22 +9,21 @@ import LoginJunho from './pages/junho/Login/Login.js';
 import MainWonho from './pages/wonho/Main/Main.js';
 import LoginWonho from './pages/wonho/Login/Login.js';
 
-
 const Router = () => {
-    return ( 
-        <BrowserRouter> 
-            <Routes>
-                <Route path='/loginEunji' element={<LoginEunji />} />
-                <Route path='/mainEunji' element={<MainEunji />} />
-                <Route path='/loginGiseon' element={<LoginGiseon />} />
-                <Route path='/mainGiseon' element={<MainGiseon />} />
-                <Route path='/loginJunho' element={<LoginJunho />} />
-                <Route path='/mainJunho' element={<MainJunho />} />
-                <Route path='/loginWonho' element={<LoginWonho />} />
-                <Route path='/mainWonho' element={<MainWonho />} />
-            </Routes>
-        </BrowserRouter>
-    )
-}
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/loginEunji" element={<LoginEunji />} />
+        <Route path="/mainEunji" element={<MainEunji />} />
+        <Route path="/loginGiseon" element={<LoginGiseon />} />
+        <Route path="/mainGiseon" element={<MainGiseon />} />
+        <Route path="/loginJunho" element={<LoginJunho />} />
+        <Route path="/mainJunho" element={<MainJunho />} />
+        <Route path="/loginWonho" element={<LoginWonho />} />
+        <Route path="/mainWonho" element={<MainWonho />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default Router;
