@@ -1,7 +1,11 @@
-import React from "react";
-import ReactDOM from ‘react-dom/client’;
-import Router from ‘./Router’;
-import ‘./styles/reset.scss’;
-import ‘./styles/common.scss’;
-const root = ReactDOM.createRoot(document.getElementById(‘root’));
-root.render(<Router />);
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './style/reset.css';
+import Router from './Router';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+    <Router/>    
+);

@@ -1,0 +1,384 @@
+@media only screen and (max-width: 1024px) {
+    aside {
+        display: none;
+    }
+    .layout {
+        display: block;
+    }
+    .reference a {
+        font-size: 8px;
+    }
+}
+
+body {
+    background-color: #FAFAFA;
+    box-sizing: border-box;   
+    line-height: 18px;
+    font-size: 14px;
+}
+
+input:focus{outline: none;}
+
+.basic {
+    background-color: #FFFFFF;
+}
+
+.topLine {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #DBDBDBDB;  
+    
+    .westarFont {  
+        margin-top: 5px;
+        font-size: 24px;
+        text-align: center;    
+        font-family: 'Lobster', cursive;
+    }
+    
+    .searchLocation {
+        margin-left: 100px;
+    }
+    
+    .searchPosion {
+        position: relative;
+        
+        .searchIcon {
+            position: absolute;
+            top: 8px;
+            left: 5px;
+            height: 15px;
+        }
+        
+        .search {
+            box-sizing: border-box;
+            padding-left: 25px;
+            height: 30px;
+            width: 260px;
+            border-radius: 3px;
+            border: 0;
+            background-color: #EFEFEF;
+        }
+    }
+    
+    .icon {
+        display: grid;
+        grid-template-columns: 50px 50px 50px 50px 50px 50px;
+        justify-content: center;
+    }
+    
+    .icon :nth-child(1) {
+        width: 28px;
+        height: 28px;
+        background-image: url("../../assets/images/home.png");
+        background-size: cover;
+    }
+    
+    .icon :nth-child(2) {
+        width: 30px;
+        height: 30px;
+        background-image: url("../../assets/images/airplane.png");
+        background-size: cover;
+    }
+    
+    .icon :nth-child(3) {
+        width: 28px;
+        height: 28px;
+        background-image: url("../../assets/images/plus.png");
+        background-size: cover;
+    }
+    
+    .icon :nth-child(4) {
+        width: 28px;
+        height: 28px;
+        background-image: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png");
+        background-size: cover;
+    }
+    
+    .icon :nth-child(5) {
+        width: 30px;
+        height: 28px;
+        background-image: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png");
+        background-size: cover;
+    }
+    
+    .icon :nth-child(6) {
+        width: 28px;
+        height: 28px;
+        background-image: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png");
+        background-size: cover;
+    }
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1.2fr 3fr 2fr 0.8fr;
+    
+    .top {
+        width: 400px;
+        height: 60px;
+        margin: 20px auto;
+        border: 1px solid #DBDBDBDB;
+        border-radius: 8px;    
+        
+        .topPropil :nth-child(n) {
+            height: 50px;
+            margin: auto 3px;
+            border: 4px solid transparent;
+            border-radius: 25px;
+            background-image:linear-gradient(#fff, #fff),
+            linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+        }
+    }
+    
+    .feed {
+        width: 400px;
+        height: auto;
+        margin: 20px auto;
+        
+        .feedBox {
+            border: 1px solid #DBDBDBDB;
+            border-radius: 8px;
+        }
+        
+        .feedtop {
+            position: relative;
+            height: 55px;
+            border-bottom: 1px solid #DBDBDBDB;
+        }
+        
+        .feedtop :nth-child(1) {
+            height: 40px;
+            margin: 8px;
+        }
+        
+        .feedtop span {
+            position: absolute;
+            top: 18px;
+            width: 150px;
+            height: 25px;
+        }
+        
+        .feedImg {
+            height: 430px;
+            width: 398px;
+        }
+        
+        .clickedIcon {
+            position: relative;
+        }
+        
+        .clickedIcon :nth-child(n) {
+            height: 24px;
+            margin: 1px 4px;
+        }
+        
+        .clickedIcon .hartClick {
+            margin-top: 10px;
+            margin-left: 15px;
+            font-weight: 600;
+        }
+        
+        .chat {
+            position: relative;
+            width: 398px;
+            height: auto;
+            max-height: 85px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            overflow: auto;
+            overflow: scroll;
+            /*  수정버튼 생기면 */
+            .create {
+                padding-left: 20px;
+                width: 350px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                
+                .createP {
+                    width: 200px;
+                    height: 20px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                
+                .createBtn {
+                    position: absolute;
+                    right: 0;
+                    border: 0;
+                    background-color: white;
+                    color: gray;
+                }
+            }
+            
+        }
+        
+        .chat::-webkit-scrollbar {
+            display: none; 
+        }
+        
+        .chatting {
+            display: flex;
+            align-items: center;
+            width: 398px;
+            height: 40px;
+            border-top: 1px solid #DBDBDBDB;
+        }
+        
+        .inputImg {
+            height: 20px;
+            margin-left: 5px;      
+        }
+        
+        .chatInput {
+            width: 325px;
+            height: 23px;
+            border: 0;
+            padding: 0px;
+            padding-left: 7px;
+        }
+        
+        .chatSubmit{
+            width: auto;
+            border: 0;
+            color: skyblue;
+            background-color: #FFFFFF;
+        }
+    }
+    
+    aside{
+        position: relative;
+        
+        .member{
+            position: absolute;
+            top: 40px;
+            width: 50px;
+            height: 50px;
+            border: 4px solid transparent;
+            border-radius: 25px;
+            background-image:linear-gradient(#fff, #fff),
+            linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+        }
+        
+        .enName{
+            position: absolute;
+            top: 43px;
+            left: 80px;
+            font-weight: 1000;
+        }
+        
+        .koName{
+            position: absolute;
+            top: 67px;
+            left: 80px;
+        }
+        
+        .suggestion {
+            position: absolute;
+            top: 97px;
+            color: gray;
+        }
+        
+        .allShow {
+            position: absolute;
+            top: 97px;
+            left: 200px;
+            font-weight: 700;
+        }
+        
+        .suggestionLs {
+            position: absolute;
+            top: 130px;
+            margin: 5px;
+            
+            .suggestionLs_1 > span, .suggestionLs_2 > span, 
+            .suggestionLs_3 > span, .suggestionLs_4 > span, 
+            .suggestionLs_5 > span{
+                width: 32px;
+                height: 32px;
+                margin: 5px;
+                border-radius: 16px;
+                margin-left: 45px;
+                font-weight: 700;
+            }
+            
+            .suggestion_style {
+                width: 32px;
+                height: 32px;
+                margin: 5px;
+                border-radius: 16px;
+                background-size: cover;
+            }
+            
+            .suggestionLs_1 {
+                background-image: url('../../assets/images/suggestion1.jpg');
+            }
+            
+            .suggestionLs_2 {
+                background-image: url('../../assets/images/suggestion2.jpg');
+            }
+            
+            .suggestionLs_3 {
+                background-image: url('../../assets/images/suggestion3.jpg');
+            }
+            
+            .suggestionLs_4 {
+                background-image: url('../../assets/images/suggestion4.jpg');
+            }
+            
+            .suggestionLs_5 {
+                background-image: url('../../assets/images/suggestion5.jpg');
+            }
+        }
+    }
+    
+}
+.reference {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.reference a {
+    margin-left: 5px;
+    color: gray;
+    text-decoration: none;
+}
+
+
+/*  수정버튼 생기면 */
+// .create {
+//     padding-left: 20px;
+//     width: 350px;
+//     height: 25px;
+//     display: flex;
+//     flex-direction: column;
+    
+//     .createP {
+//         width: 200px;
+//         height: 20px;
+//         white-space: nowrap;
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//     }
+
+//     .createBtn {
+//         position: absolute;
+//         right: 0;
+//         border: 0;
+//         background-color: white;
+//         color: gray;
+//     }
+// }
+
