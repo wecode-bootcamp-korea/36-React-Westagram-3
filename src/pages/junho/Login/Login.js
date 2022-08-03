@@ -4,7 +4,7 @@ function LoginJunho() {
     <>
       <h1>Login</h1>
       <Link to="./Main">
-        <button>로그인</button>
+        <button>로그인,</button>
       </Link>
     </>
   );
