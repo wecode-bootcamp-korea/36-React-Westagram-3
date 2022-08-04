@@ -8,10 +8,12 @@ import MainJunho from './pages/junho/Main/Main.js';
 import LoginJunho from './pages/junho/Login/Login.js';
 import MainWonho from './pages/wonho/Main/Main.js';
 import LoginWonho from './pages/wonho/Login/Login.js';
+import Nav from './components/Nav/Nav.js';
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path="/loginEunji" element={<LoginEunji />} />
         <Route path="/mainEunji" element={<MainEunji />} />
