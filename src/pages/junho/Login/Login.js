@@ -20,7 +20,7 @@ function LoginJunho() {
   const goToMain = () => {
     navigate('/mainJunho');
   };
-  const idWorking = e => {
+  const saveUserId = e => {
     setId(e.target.value);
   };
   const pwdWorking = e => {
@@ -45,7 +45,7 @@ function LoginJunho() {
               type="text"
               placeholder="전화번호,사용자 이름 또는 이메일"
               value={id}
-              onChange={idWorking}
+              onChange={saveUserId}
             />
           </div>
           <div className="pwdInput">
