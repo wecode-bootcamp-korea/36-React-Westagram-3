@@ -5,25 +5,20 @@ import { useNavigate } from 'react-router-dom';
 function LoginJunho() {
   const [id, setId] = useState('');
   const [pwd, setPwd] = useState('');
-  const [btnColor, setBtnColr] = useState('rgba(var(--d69,0,149,246),.3)');
+  const [btnColor, setBtnColor] = useState('rgba(var(--d69,0,149,246),.3)');
   const [toggle, setToggle] = useState('disabled');
   const navigate = useNavigate();
-  const canToMain = () => {
-    if (id.includes('@') && pwd.length >= 5) {
-      setToggle('');
-      setBtnColr('#0095f6');
-    } else {
-      setToggle('disabled');
-      setBtnColr('rgba(var(--d69,0,149,246),.3)');
-    }
-  };
+  const canToMain = () =>
+    id.includes('@') && pwd.length >= 5
+      ? (setToggle(''), setBtnColor('#0095f6'))
+      : (setToggle('disabled'), setBtnColor('rgba(var(--d69,0,149,246),.3)'));
   const goToMain = () => {
     navigate('/mainJunho');
   };
   const saveUserId = e => {
     setId(e.target.value);
   };
-  const pwdWorking = e => {
+  const saveUserPwd = e => {
     setPwd(e.target.value);
   };
 
@@ -54,7 +49,7 @@ function LoginJunho() {
               type="password"
               placeholder="비밀번호"
               value={pwd}
-              onChange={pwdWorking}
+              onChange={saveUserPwd}
             />
           </div>
           <div className="loginBtn">
