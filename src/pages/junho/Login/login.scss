@@ -1,0 +1,135 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin sizes() {
+  width: 100px;
+  height: 400px;
+}
+
+body {
+  background-color: #fafafa;
+  box-sizing: border-box;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.section {
+  @include size(350px, 396px);
+  background-color: #ffffff;
+  margin: 10% auto;
+  position: relative;
+  border: 1px solid #dbdbdbdb;
+
+  .loginImgCenter {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+
+    .loginFont {
+      font-size: 45px;
+      text-align: center;
+      font-family: 'Lobster', cursive;
+      margin-top: 10px;
+    }
+  }
+
+  .loginBox {
+    position: absolute;
+    top: 34%;
+    display: flex;
+    flex-direction: column;
+    @include size(350px, 374px);
+
+    .idInput,
+    .pwdInput,
+    .loginBtn,
+    .midLine,
+    .facebookLogin {
+      position: relative;
+      @include size(350px, 35px);
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    input {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .idInputStyle,
+    .pwdInputStyle {
+      position: absolute;
+      left: 50%;
+      @include size(256px, 28px);
+      margin-left: -128px;
+      padding-left: 8px;
+      font-size: 12px;
+      background-color: #f9f7f7;
+      border: 0.1px solid #beb9b9;
+      border-radius: 3px;
+    }
+
+    .login {
+      position: absolute;
+      left: 50%;
+      @include size(256px, 25px);
+      margin-top: 5px;
+      margin-left: -128px;
+      color: rgba(var(--eca, 255, 255, 255), 1);
+      background-color: rgba(var(--d69, 0, 149, 246), 0.3);
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+
+    .midLine {
+      display: flex;
+      justify-content: space-around;
+      @include size(285px, '');
+      margin: 0 auto;
+      margin-top: 10px;
+    }
+
+    .or {
+      color: rgba(var(--f52, 142, 142, 142), 1);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 15px;
+    }
+
+    .borderLine {
+      position: relative;
+      top: 0.45em;
+      @include size(104px, 1px);
+      background-color: rgba(var(--b38, 219, 219, 219), 1);
+    }
+
+    .facebookLogin {
+      margin-top: 5px;
+    }
+
+    .facebook {
+      position: absolute;
+      left: 28%;
+      @include size('', 16px);
+    }
+
+    .btnSpan {
+      position: absolute;
+      left: 34%;
+    }
+
+    .pwdFind {
+      display: block;
+      margin-top: 12px;
+      color: rgba(var(--fe0, 0, 55, 107), 1);
+      font-size: 12px;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}
