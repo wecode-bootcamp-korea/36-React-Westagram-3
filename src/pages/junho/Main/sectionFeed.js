@@ -19,7 +19,7 @@ function SectionFeed(props) {
           <img src="images/junho/airplane.png" alt="공유" />
           <div className="hartClick">좋아요 2만개</div>
         </div>
-        <div className="chat">{props.chatArr}</div>
+        <div className="chat">{props.chatLis}</div>
         <form
           className="chatting"
           action=""

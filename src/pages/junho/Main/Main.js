@@ -9,29 +9,31 @@ function MainJunho() {
   const [chat, setChat] = useState('');
   const [chatArr, setChatArr] = useState([]);
   const [id, setId] = useState(1);
-  const [name, setName] = useState(['juno97, 김준호']);
   const chatting = e => {
     setChat(e.target.value);
   };
-
   const submitChat = e => {
     e.preventDefault();
-    const upload = [...chatArr];
-    upload.push(
-      <div className="create" key={id}>
-        <p className="createP">juno :{chat}</p>
-        <button
-          className="createBtn"
-          onClick={e => {
-            const btn = e.target.parentElement;
-            btn.remove();
-          }}
-        >
-          삭제
-        </button>
-      </div>
+    chatLis.push({ id, chat });
+    console.log(chatLis);
+    setChatArr(
+      chatLis.map(x => {
+        return (
+          <div className="create" key={x.id}>
+            <p className="createP">juno :{x.chat}</p>
+            <button
+              className="createBtn"
+              onClick={e => {
+                const btn = e.target.parentElement;
+                btn.remove();
+              }}
+            >
+              삭제
+            </button>
+          </div>
+        );
+      })
     );
-    setChatArr(upload);
     setChat('');
     setId(id + 1);
   };
@@ -68,7 +70,7 @@ function MainJunho() {
             chat={chat}
             onChage={chatting}
             onSubmit={submitChat}
-            chatArr={chatArr}
+            chatLis={chatArr}
           ></SectionFeed>
         </main>
         <aside>
@@ -108,3 +110,5 @@ const suggestionName = [
   { id: 4, name: 'likeavenger' },
   { id: 5, name: 'lee_ej__09ll' },
 ];
+const name = ['juno97, 김준호'];
+const chatLis = [];
