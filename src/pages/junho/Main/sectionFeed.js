@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Chatting from './Chatting';
 
-function SectionFeed(props) {
+function SectionFeed({ chatArr, chat, onChage, onSubmit }) {
   const [isvalid, setIsvalid] = useState('disabled');
   return (
     <section className="feed">
@@ -21,13 +21,13 @@ function SectionFeed(props) {
           <div className="hartClick">좋아요 2만개</div>
         </div>
         <div className="chat">
-          <Chatting chatArr={props.chatArr} />
+          <Chatting chatArr={chatArr} />
         </div>
         <form
           className="chatting"
           action=""
           onSubmit={e => {
-            props.onSubmit(e);
+            onSubmit(e);
           }}
         >
           <img
@@ -39,8 +39,8 @@ function SectionFeed(props) {
             className="chatInput"
             type="text"
             placeholder="댓글 달기..."
-            value={props.chat}
-            onChange={e => props.onChage(e)}
+            value={chat}
+            onChange={e => onChage(e)}
             onKeyUp={e => {
               e.target.value.length > 0
                 ? setIsvalid('')

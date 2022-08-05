@@ -1,5 +1,5 @@
-const OneChat = props => {
-  return <>{props.chatArr}</>;
+const OneChat = ({ chatArr }) => {
+  return { chatArr };
 };
 
 export default OneChat;

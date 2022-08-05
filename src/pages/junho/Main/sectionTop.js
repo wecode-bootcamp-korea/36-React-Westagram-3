@@ -1,7 +1,7 @@
-function SectionTop(props) {
+function SectionTop({ members }) {
   const memberLis = [];
-  for (let i = 0; i < props.members.length; i++) {
-    let member = props.members[i];
+  for (let i = 0; i < members.length; i++) {
+    let member = members[i];
     memberLis.push(<img key={member.id} src={member.src} alt={member.alt} />);
   }
   return (

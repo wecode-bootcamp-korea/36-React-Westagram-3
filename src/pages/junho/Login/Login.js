@@ -65,9 +65,9 @@ function LoginJunho() {
           </div>
         </form>
         <div className="midLine">
-          <div className="borderLine"></div>
+          <div className="borderLine" />
           <div className="or">또는</div>
-          <div className="borderLine"></div>
+          <div className="borderLine" />
         </div>
         <div className="facebookLogin">
           <img

@@ -1,7 +1,7 @@
-function SuggestionMember(props) {
+function SuggestionMember({ name }) {
   const suggestionLs = [];
-  for (let i = 0; i < props.name.length; i++) {
-    let single = props.name[i];
+  for (let i = 0; i < name.length; i++) {
+    let single = name[i];
     suggestionLs.push(
       <div
         key={single.id}
