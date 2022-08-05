@@ -4,13 +4,12 @@ import SectionTop from './sectionTop';
 import SectionFeed from './sectionFeed';
 import MyProfile from './myProfile';
 import SuggestionMember from './suggestionMember';
-import { upload } from '@testing-library/user-event/dist/upload';
 
 function MainJunho() {
   const [chat, setChat] = useState('');
   const [chatArr, setChatArr] = useState([]);
   const [id, setId] = useState(1);
-
+  const [name, setName] = useState(['juno97, 김준호']);
   const chatting = e => {
     setChat(e.target.value);
   };
@@ -73,7 +72,7 @@ function MainJunho() {
           ></SectionFeed>
         </main>
         <aside>
-          <MyProfile name="juno97, 김준호"></MyProfile>
+          <MyProfile name={name}></MyProfile>
           <SuggestionMember name={suggestionName}></SuggestionMember>
         </aside>
         <div />
