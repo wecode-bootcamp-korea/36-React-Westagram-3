@@ -4,11 +4,13 @@ import SectionTop from './sectionTop';
 import SectionFeed from './sectionFeed';
 import MyProfile from './myProfile';
 import SuggestionMember from './suggestionMember';
+import { upload } from '@testing-library/user-event/dist/upload';
 
 function MainJunho() {
   const [chat, setChat] = useState('');
   const [chatArr, setChatArr] = useState([]);
   const [id, setId] = useState(1);
+
   const chatting = e => {
     setChat(e.target.value);
   };
@@ -17,12 +19,12 @@ function MainJunho() {
     e.preventDefault();
     const upload = [...chatArr];
     upload.push(
-      <div className="create" id={id}>
+      <div className="create" key={id}>
         <p className="createP">juno :{chat}</p>
         <button
           className="createBtn"
-          onClick={event => {
-            const btn = event.target.parentElement;
+          onClick={e => {
+            const btn = e.target.parentElement;
             btn.remove();
           }}
         >
