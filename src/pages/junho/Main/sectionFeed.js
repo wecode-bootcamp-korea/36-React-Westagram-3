@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Chatting from './Chatting';
 
 function SectionFeed(props) {
   const [isvalid, setIsvalid] = useState('disabled');
@@ -19,7 +20,9 @@ function SectionFeed(props) {
           <img src="images/junho/airplane.png" alt="공유" />
           <div className="hartClick">좋아요 2만개</div>
         </div>
-        <div className="chat">{props.chatLis}</div>
+        <div className="chat">
+          <Chatting chatArr={props.chatArr} />
+        </div>
         <form
           className="chatting"
           action=""

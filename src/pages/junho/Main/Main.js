@@ -15,7 +15,6 @@ function MainJunho() {
   const submitChat = e => {
     e.preventDefault();
     chatLis.push({ id, chat });
-    console.log(chatLis);
     setChatArr(
       chatLis.map(x => {
         return (
@@ -49,33 +48,33 @@ function MainJunho() {
                 src="images/junho/search.png"
                 alt=""
               />
-              <input className="search" type="text" placeholder="검색"></input>
+              <input className="search" type="text" placeholder="검색" />
             </div>
           </div>
           <div className="icon">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
           </div>
         </div>
       </nav>
       <div className="layout">
-        <div></div>
+        <div />
         <main>
-          <SectionTop members={members}></SectionTop>
+          <SectionTop members={members} />
           <SectionFeed
             chat={chat}
             onChage={chatting}
             onSubmit={submitChat}
-            chatLis={chatArr}
-          ></SectionFeed>
+            chatArr={chatArr}
+          />
         </main>
         <aside>
-          <MyProfile name={name}></MyProfile>
-          <SuggestionMember name={suggestionName}></SuggestionMember>
+          <MyProfile name={name} />
+          <SuggestionMember name={suggestionName} />
         </aside>
         <div />
       </div>
