@@ -1,0 +1,35 @@
+@import "../../styles/mixin.scss";
+
+.post-content-wrap {
+	@include flex(column, null, null);
+    padding: 0 18px;
+}
+
+.likes {
+	@include flex(null, null, center);
+    height: 30px;
+}
+
+.likes-user {
+    @include flex(null, null, center);
+    img {
+        width: 20px;
+		height: 20px;
+		border-radius: 50%;
+    }
+	p {
+		margin-left: 5px;
+	}
+}
+
+.post-content {
+	margin-left: 2px;
+	width: 100%;
+	p {
+		margin-bottom: 5px;
+	}
+}
+
+.post-time {
+	font-size: 10px;
+}

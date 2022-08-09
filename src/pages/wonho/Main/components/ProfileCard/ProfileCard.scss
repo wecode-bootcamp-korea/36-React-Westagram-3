@@ -1,0 +1,9 @@
+@import "../../styles/mixin.scss";
+
+.profile-card {
+	@include flex(null, space-between, center); margin-bottom: 10px;
+}
+
+.profile-left {
+    @include flex(null, null, center);
+}

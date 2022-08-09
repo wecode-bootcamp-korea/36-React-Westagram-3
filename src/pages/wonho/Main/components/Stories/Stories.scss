@@ -1,0 +1,27 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/variables.scss";
+
+.stories-wrapper {
+	@include flex(column, null, null); 
+    height: 200px;
+	padding: 20px 20px 0px 20px;
+	border: 1.4px solid $borderColor;
+	border-radius: 2px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: white;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.stories-header {
+	@include flex(null, space-between, null); 
+    margin-bottom: 10px;
+	background: white;
+}
+
+.stories {
+	@include flex(null, flex-start, center); 
+    margin-bottom: 5px;
+}
