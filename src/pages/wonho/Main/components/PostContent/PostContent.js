@@ -22,8 +22,8 @@ function PostContent({ title }, { hash }, { likes }, { comments }) {
         <p className="hashtag">{hash}</p>
         <p className="grayfont">댓글 모두 보기</p>
         <div className="comment-post">
-          {comments.map(comment => {
-            return <Comments content={comment} />;
+          {comments.map((comment, index) => {
+            return <Comments key={index} content={comment} />;
           })}
         </div>
       </div>
