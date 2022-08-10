@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import './Main.scss';
 import '../../../styles/common.scss';
 import './components/Nav/Nav.scss';
@@ -8,12 +9,10 @@ import './components/ProfileCard/ProfileCard.scss';
 import './components/Stories/Stories.scss';
 import './components/Suggestions/Suggestions.scss';
 import Nav from './components/Nav/Nav';
-import PostOne from './components/Posts/PostOne';
-import PostTwo from './components/Posts/PostTwo';
+import Posts from './components/Posts/Posts';
 import ProfileCard from './components/ProfileCard/ProfileCard';
 import Stories from './components/Stories/Stories';
 import Suggestions from './components/Suggestions/Suggestions';
-import { useState, useEffect } from 'react';
 
 function MainWonho() {
   const [suggestions, setSuggestions] = useState([]);
@@ -47,9 +46,7 @@ function MainWonho() {
       <section className="main">
         <div className="main-wrap">
           <div className="left-col">
-            <PostOne />
-
-            <PostTwo />
+            <Posts />
           </div>
           <div className="right-col">
             <ProfileCard />

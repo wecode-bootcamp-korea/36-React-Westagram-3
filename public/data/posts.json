@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "img": "./images/welshcorgi.jpg",
+    "alt": "welshcorgi",
+    "title": "Corgi",
+    "hash": "#welshcorgi #shortlegs #butt",
+    "likes": "30,000"
+  },
+  {
+    "id": 2,
+    "img": "./images/dachshund.jpg",
+    "alt": "dachshund",
+    "title": "Dachshund",
+    "hash": "#dachshund #shortlegs #hotdog",
+    "likes": "25,000"
+  }
+]
