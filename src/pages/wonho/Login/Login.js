@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.scss';
-import '../../styles/common.scss';
+import '../../../styles/common.scss';
 import { useNavigate } from 'react-router-dom';
 
 function LoginWonho() {

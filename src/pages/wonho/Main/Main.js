@@ -1,5 +1,5 @@
 import './Main.scss';
-import '../../styles/common.scss';
+import '../../../styles/common.scss';
 import './components/Nav/Nav.scss';
 import './components/PostTop/PostTop.scss';
 import './components/PostNav/PostNav.scss';

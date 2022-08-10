@@ -1,9 +1,10 @@
-@import "../../styles/mixin.scss";
+@import '../../../../../styles/variables.scss';
 
 .profile-card {
-	@include flex(null, space-between, center); margin-bottom: 10px;
+  @include flex(space-between, center);
+  margin-bottom: 10px;
 }
 
 .profile-left {
-    @include flex(null, null, center);
+  @include flex(null, center);
 }
