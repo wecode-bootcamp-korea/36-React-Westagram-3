@@ -1,3 +1,21 @@
+const NAV_LIST = [
+  {
+    id: 1,
+    src: 'https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png',
+    alt: 'explore',
+  },
+  {
+    id: 2,
+    src: 'https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png',
+    alt: 'heart',
+  },
+  {
+    id: 3,
+    src: 'https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png',
+    alt: 'profile',
+  },
+];
+
 function Nav() {
   return (
     <div className="header-wrap">
@@ -13,30 +31,13 @@ function Nav() {
       </div>
       <nav>
         <ul className="nav-items">
-          <li>
-            <a href=" ">
-              <img
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-                alt=" "
-              />
-            </a>
-          </li>
-          <li>
-            <a href=" ">
-              <img
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                alt=" "
-              />
-            </a>
-          </li>
-          <li>
-            <a href=" ">
-              <img
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-                alt=" "
-              />
-            </a>
-          </li>
+          {NAV_LIST.map(navList => (
+            <li key={navList.id}>
+              <a href=" ">
+                <img src={navList.src} alt={navList.alt} />
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

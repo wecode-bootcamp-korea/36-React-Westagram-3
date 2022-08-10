@@ -13,8 +13,32 @@ import PostTwo from './components/Posts/PostTwo';
 import ProfileCard from './components/ProfileCard/ProfileCard';
 import Stories from './components/Stories/Stories';
 import Suggestions from './components/Suggestions/Suggestions';
+import { useState, useEffect } from 'react';
 
 function MainWonho() {
+  const [suggestions, setSuggestions] = useState([]);
+  const [stories, setStories] = useState([]);
+
+  useEffect(() => {
+    fetch('./data/suggestions.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setSuggestions(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch('./data/stories.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setStories(data);
+      });
+  }, []);
+
   return (
     <>
       <header>
@@ -30,9 +54,9 @@ function MainWonho() {
           <div className="right-col">
             <ProfileCard />
 
-            <Stories />
+            <Stories stories={stories} />
 
-            <Suggestions />
+            <Suggestions suggestions={suggestions} />
           </div>
         </div>
       </section>

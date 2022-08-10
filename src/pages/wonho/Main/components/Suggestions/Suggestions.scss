@@ -10,6 +10,17 @@
   background-color: white;
 }
 
+.suggestions-header {
+  @include flex(space-between, null);
+  margin-bottom: 10px;
+  background: white;
+}
+
+.suggestions {
+  @include flex(flex-start, center);
+  margin-bottom: 5px;
+}
+
 .profile-status {
   width: 50px;
   height: 50px;
