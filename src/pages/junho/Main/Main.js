@@ -3,17 +3,27 @@ import SectionTop from './sectionTop';
 import SectionFeed from './sectionFeed';
 import MyProfile from './myProfile';
 import SuggestionMember from './suggestionMember';
-import { MEMBERS, SUGGESTION_NAME, NAME } from './data';
+import { MEMBERS, NAME } from './data';
 import { useEffect, useState } from 'react';
 
 function MainJunho() {
-  const [feed, setFeed] = useState('');
+  const [feed, setFeed] = useState([]);
+  const [suggestion, setSuggestion] = useState([]);
   useEffect(
     () =>
       fetch('./data/feedimg.json')
         .then(response => response.json())
         .then(data => {
           setFeed(data);
+        }),
+    []
+  );
+  useEffect(
+    () =>
+      fetch('./data/suggetion.json')
+        .then(response => response.json())
+        .then(data => {
+          setSuggestion(data);
         }),
     []
   );
@@ -45,11 +55,14 @@ function MainJunho() {
       <div className="layout">
         <div />
         <main>
-          <SectionFeed />
+          <SectionTop members={MEMBERS} />
+          {feed.map(x => {
+            return <SectionFeed key={x.id} img={x.img} />;
+          })}
         </main>
         <aside>
           <MyProfile name={NAME} />
-          <SuggestionMember name={SUGGESTION_NAME} />
+          <SuggestionMember name={suggestion} />
         </aside>
         <div />
       </div>

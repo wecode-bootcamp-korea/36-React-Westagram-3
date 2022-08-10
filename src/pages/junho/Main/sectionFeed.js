@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import OneChat from './OneChat';
 
-function SectionFeed() {
+function SectionFeed({ img }) {
   const [chat, setChat] = useState('');
   const [chatArr, setChatArr] = useState([]);
   const [id, setId] = useState(1);
@@ -40,7 +40,7 @@ function SectionFeed() {
           <img src="images/junho/who.jpg" alt="누구?" />
           <span> Front-end developer</span>
         </div>
-        <img className="feedImg" src="images/junho/instar.jpg" alt="feed" />
+        <img className="feedImg" src={img} alt="feed" />
         <div className="clickedIcon">
           <img
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
