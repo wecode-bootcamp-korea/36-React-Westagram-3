@@ -11,16 +11,46 @@ function LoginJunho() {
   const [toggle, setToggle] = useState('disabled');
   const navigate = useNavigate();
   const canToMain = () =>
-    inputValue.email.includes('@') && inputValue.password.length >= 5
+    inputValue.email.includes('') && inputValue.password.length >= 5
       ? (setToggle(''), setBtnColor('#0095f6'))
       : (setToggle('disabled'), setBtnColor('rgba(var(--d69,0,149,246),.3)'));
-  const goToMain = () => {
-    navigate('/mainJunho');
+  const goToMain = e => {
+    // 로그인
+    e.preventDefault();
+    fetch('http://10.58.4.94:3000/auth/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: inputValue.email,
+        password: inputValue.password,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => localStorage.setItem('data', JSON.stringify(data)));
+    if (localStorage.data) {
+      navigate('/mainJunho');
+    }
   };
   const saveInput = e => {
     const { name, value } = e.target;
     setInpustValue({ ...inputValue, [name]: value });
   };
+  // 회원가입부분
+  const signUP = () =>
+    fetch('http://10.58.4.94:3000/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: inputValue.email,
+        password: inputValue.password,
+      }),
+    });
+  // .then(response => response.json())
+  // .then(data => console.log(data));
   return (
     <section className="section">
       <article className="loginImgCenter">
@@ -69,14 +99,19 @@ function LoginJunho() {
           <div className="or">또는</div>
           <div className="borderLine" />
         </div>
-        <div className="facebookLogin">
-          <img
-            className="facebook"
-            src="./images/junho/Facebook.jpg"
-            alt="facebook"
-          />
-          <span className="btnSpan">Facebook으로 로그인</span>
-        </div>
+        <button
+          style={{ border: 'none', background: 'white', cursor: 'pointer' }}
+          onClick={signUP}
+        >
+          <div className="facebookLogin">
+            <img
+              className="facebook"
+              src="./images/junho/Facebook.jpg"
+              alt="facebook"
+            />
+            <span className="btnSpan">Facebook 회원가입</span>
+          </div>
+        </button>
         <a
           className="pwdFind"
           href="https://www.instagram.com/accounts/password/reset/"

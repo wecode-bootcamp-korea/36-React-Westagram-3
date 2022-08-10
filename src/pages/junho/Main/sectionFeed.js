@@ -1,7 +1,37 @@
 import { useState } from 'react';
 import OneChat from './OneChat';
 
-function SectionFeed({ chatArr, chat, onChage, onSubmit }) {
+function SectionFeed() {
+  const [chat, setChat] = useState('');
+  const [chatArr, setChatArr] = useState([]);
+  const [id, setId] = useState(1);
+  const chatting = e => {
+    setChat(e.target.value);
+  };
+  const submitChat = e => {
+    e.preventDefault();
+    chatLis.push({ id, chat });
+    setChatArr(
+      chatLis.map(x => {
+        return (
+          <div className="create" key={x.id}>
+            <p className="createP">juno :{x.chat}</p>
+            <button
+              className="createBtn"
+              onClick={e => {
+                const btn = e.target.parentElement;
+                btn.remove();
+              }}
+            >
+              삭제
+            </button>
+          </div>
+        );
+      })
+    );
+    setChat('');
+    setId(id + 1);
+  };
   const [isvalid, setIsvalid] = useState('disabled');
   return (
     <section className="feed">
@@ -25,13 +55,7 @@ function SectionFeed({ chatArr, chat, onChage, onSubmit }) {
             <OneChat chatArr={x} key={x.key} />
           ))}
         </div>
-        <form
-          className="chatting"
-          action=""
-          onSubmit={e => {
-            onSubmit(e);
-          }}
-        >
+        <form className="chatting" action="" onSubmit={submitChat}>
           <img
             className="inputImg"
             src="images/junho/smaile.png"
@@ -42,7 +66,7 @@ function SectionFeed({ chatArr, chat, onChage, onSubmit }) {
             type="text"
             placeholder="댓글 달기..."
             value={chat}
-            onChange={e => onChage(e)}
+            onChange={e => chatting(e)}
             onKeyUp={e => {
               e.target.value.length > 0
                 ? setIsvalid('')
@@ -58,3 +82,5 @@ function SectionFeed({ chatArr, chat, onChage, onSubmit }) {
   );
 }
 export default SectionFeed;
+
+const chatLis = [];

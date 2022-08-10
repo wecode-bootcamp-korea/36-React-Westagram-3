@@ -15,4 +15,3 @@ export const SUGGESTION_NAME = [
   { id: 5, name: 'lee_ej__09ll' },
 ];
 export const NAME = ['juno97, 김준호'];
-export const chatLis = [];

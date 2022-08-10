@@ -1,42 +1,22 @@
 import './main.scss';
-import { useState } from 'react';
 import SectionTop from './sectionTop';
 import SectionFeed from './sectionFeed';
 import MyProfile from './myProfile';
 import SuggestionMember from './suggestionMember';
-import { MEMBERS, SUGGESTION_NAME, NAME, chatLis } from './data';
+import { MEMBERS, SUGGESTION_NAME, NAME } from './data';
+import { useEffect, useState } from 'react';
 
 function MainJunho() {
-  const [chat, setChat] = useState('');
-  const [chatArr, setChatArr] = useState([]);
-  const [id, setId] = useState(1);
-  const chatting = e => {
-    setChat(e.target.value);
-  };
-  const submitChat = e => {
-    e.preventDefault();
-    chatLis.push({ id, chat });
-    setChatArr(
-      chatLis.map(x => {
-        return (
-          <div className="create" key={x.id}>
-            <p className="createP">juno :{x.chat}</p>
-            <button
-              className="createBtn"
-              onClick={e => {
-                const btn = e.target.parentElement;
-                btn.remove();
-              }}
-            >
-              삭제
-            </button>
-          </div>
-        );
-      })
-    );
-    setChat('');
-    setId(id + 1);
-  };
+  const [feed, setFeed] = useState('');
+  useEffect(
+    () =>
+      fetch('./data/feedimg.json')
+        .then(response => response.json())
+        .then(data => {
+          setFeed(data);
+        }),
+    []
+  );
   return (
     <>
       <nav>
@@ -65,13 +45,7 @@ function MainJunho() {
       <div className="layout">
         <div />
         <main>
-          <SectionTop members={MEMBERS} />
-          <SectionFeed
-            chat={chat}
-            onChage={chatting}
-            onSubmit={submitChat}
-            chatArr={chatArr}
-          />
+          <SectionFeed />
         </main>
         <aside>
           <MyProfile name={NAME} />
