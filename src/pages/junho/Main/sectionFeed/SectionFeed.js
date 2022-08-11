@@ -1,22 +1,27 @@
 import { useState } from 'react';
-import OneChat from './OneChat';
+import OneChat from './oneChat/OneChat';
+import './sectionFeed.scss';
 
 function SectionFeed({ img }) {
   const [chat, setChat] = useState('');
   const [chatLis, setChatLis] = useState([]);
-  const [isvalid, setIsvalid] = useState('disabled');
+  const isvalid = chat.length > 0;
+
   const chatting = e => {
     setChat(e.target.value);
   };
+
   const submitChat = e => {
     e.preventDefault();
     const seconds = Math.floor(Date.now() / 1000);
     setChatLis([...chatLis, { id: seconds, chat: chat }]);
     setChat('');
   };
+
   const chatListDelete = e => {
     setChatLis(chatLis.filter(x => x.id !== Number(e.target.parentElement.id)));
   };
+
   return (
     <section className="feed">
       <div className="feedBox basic">
@@ -55,14 +60,9 @@ function SectionFeed({ img }) {
             type="text"
             placeholder="댓글 달기..."
             value={chat}
-            onChange={e => chatting(e)}
-            onKeyUp={e => {
-              e.target.value.length > 0
-                ? setIsvalid('')
-                : setIsvalid('disabled');
-            }}
+            onChange={chatting}
           />
-          <button className="chatSubmit" disabled={isvalid}>
+          <button className="chatSubmit" disabled={!isvalid}>
             게시
           </button>
         </form>
@@ -71,5 +71,3 @@ function SectionFeed({ img }) {
   );
 }
 export default SectionFeed;
-
-// const chatLis = [];

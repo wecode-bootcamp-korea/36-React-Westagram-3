@@ -7,11 +7,4 @@ export const MEMBERS = [
   { id: 6, src: 'images/junho/ingyeng.jpg', alt: '97인경' },
 ];
 
-export const SUGGESTION_NAME = [
-  { id: 1, name: 'hcchang13' },
-  { id: 2, name: 'hyeong7777' },
-  { id: 3, name: 'fine_artian' },
-  { id: 4, name: 'likeavenger' },
-  { id: 5, name: 'lee_ej__09ll' },
-];
 export const NAME = ['juno97, 김준호'];

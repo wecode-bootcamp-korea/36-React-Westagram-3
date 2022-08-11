@@ -1,23 +1,26 @@
-import './login.scss';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './login.scss';
 
 function LoginJunho() {
   const [inputValue, setInpustValue] = useState({
     email: '',
     password: '',
   });
-  const [btnColor, setBtnColor] = useState('rgba(var(--d69,0,149,246),.3)');
-  const [toggle, setToggle] = useState('disabled');
+
   const navigate = useNavigate();
-  const canToMain = () =>
-    inputValue.email.includes('') && inputValue.password.length >= 5
-      ? (setToggle(''), setBtnColor('#0095f6'))
-      : (setToggle('disabled'), setBtnColor('rgba(var(--d69,0,149,246),.3)'));
+
+  const disabled =
+    inputValue.email.includes('@') && inputValue.password.length >= 5;
+  const btnColor =
+    inputValue.email.includes('@') && inputValue.password.length >= 5
+      ? '#0095f6'
+      : 'rgba(var(--d69,0,149,246),.3)';
+
   const goToMain = e => {
     // 로그인
     e.preventDefault();
-    fetch('http://10.58.4.94:3000/auth/signin', {
+    fetch('http://10.58.0.111:3000/auth/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -27,19 +30,32 @@ function LoginJunho() {
         password: inputValue.password,
       }),
     })
-      .then(response => response.json())
-      .then(data => localStorage.setItem('data', JSON.stringify(data)));
-    if (localStorage.data) {
-      navigate('/mainJunho');
-    }
+      .then(response => {
+        if (response.ok === true) {
+          return response.json();
+        }
+        throw new Error('에러 발생!');
+      })
+      .catch(error => console.log(error))
+      .then(data => {
+        if (data.message === 'login success') {
+          localStorage.setItem('data', JSON.stringify(data));
+          navigate('/mainJunho');
+          alert('로그인 성공');
+        } else {
+          alert('로그인 실패');
+        }
+      });
   };
+
   const saveInput = e => {
     const { name, value } = e.target;
     setInpustValue({ ...inputValue, [name]: value });
   };
+
   // 회원가입부분
   const signUP = () =>
-    fetch('http://10.58.4.94:3000/auth/signup', {
+    fetch('http://10.58.0.111:3000/auth/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -51,18 +67,14 @@ function LoginJunho() {
     });
   // .then(response => response.json())
   // .then(data => console.log(data));
+
   return (
     <section className="section">
       <article className="loginImgCenter">
         <div className="loginFont">WeStagram</div>
       </article>
       <article className="loginBox">
-        <form
-          id="facebookForm"
-          method="get"
-          onKeyUp={canToMain}
-          onSubmit={goToMain}
-        >
+        <form id="facebookForm" method="get" onSubmit={goToMain}>
           <div className="idInput">
             <input
               name="email"
@@ -88,7 +100,7 @@ function LoginJunho() {
               type="submit"
               className="login"
               style={{ backgroundColor: btnColor }}
-              disabled={toggle}
+              disabled={!disabled}
             >
               로그인
             </button>

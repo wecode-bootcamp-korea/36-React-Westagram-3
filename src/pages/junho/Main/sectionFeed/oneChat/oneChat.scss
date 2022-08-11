@@ -1,0 +1,24 @@
+/*  수정버튼 생기면 */
+.create {
+  padding-left: 20px;
+  width: 350px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+
+  .createP {
+    width: 200px;
+    height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .createBtn {
+    position: absolute;
+    right: 0;
+    border: 0;
+    background-color: white;
+    color: gray;
+  }
+}

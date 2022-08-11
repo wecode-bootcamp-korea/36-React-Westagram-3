@@ -1,3 +1,4 @@
+import './oneChat.scss';
 const OneChat = ({ chatArr, id, del }) => (
   <div className="create" id={id}>
     <p className="createP">juno :{chatArr}</p>

@@ -1,0 +1,90 @@
+.feed {
+  width: 400px;
+  height: auto;
+  margin: 20px auto;
+
+  .feedBox {
+    border: 1px solid #dbdbdbdb;
+    border-radius: 8px;
+  }
+
+  .feedtop {
+    position: relative;
+    height: 55px;
+    border-bottom: 1px solid #dbdbdbdb;
+  }
+
+  .feedtop :nth-child(1) {
+    height: 40px;
+    margin: 8px;
+  }
+
+  .feedtop span {
+    position: absolute;
+    top: 18px;
+    height: 25px;
+  }
+
+  .feedImg {
+    height: 430px;
+    width: 398px;
+  }
+
+  .clickedIcon {
+    position: relative;
+  }
+
+  .clickedIcon :nth-child(n) {
+    height: 24px;
+    margin: 1px 4px;
+  }
+
+  .clickedIcon .hartClick {
+    margin-top: 10px;
+    margin-left: 15px;
+    font-weight: 600;
+  }
+
+  .chat {
+    position: relative;
+    width: 398px;
+    height: auto;
+    max-height: 85px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow: auto;
+    overflow: scroll;
+  }
+}
+
+.chat::-webkit-scrollbar {
+  display: none;
+}
+
+.chatting {
+  display: flex;
+  align-items: center;
+  width: 398px;
+  height: 40px;
+  border-top: 1px solid #dbdbdbdb;
+}
+
+.inputImg {
+  height: 20px;
+  margin-left: 5px;
+}
+
+.chatInput {
+  width: 325px;
+  height: 23px;
+  border: 0;
+  padding: 0px;
+  padding-left: 7px;
+}
+
+.chatSubmit {
+  width: auto;
+  border: 0;
+  color: skyblue;
+  background-color: #ffffff;
+}

@@ -1,3 +1,5 @@
+import './myprofile.scss';
+
 function MyProfile({ name }) {
   return (
     <>

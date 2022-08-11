@@ -1,3 +1,5 @@
+import './sectionTop.scss';
+
 const SectionTop = ({ members }) => {
   return (
     <section className="top basic">

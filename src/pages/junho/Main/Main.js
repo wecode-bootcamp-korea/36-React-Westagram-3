@@ -1,32 +1,31 @@
-import './main.scss';
-import SectionTop from './sectionTop';
-import SectionFeed from './sectionFeed';
-import MyProfile from './myProfile';
-import SuggestionMember from './suggestionMember';
-import { MEMBERS, NAME } from './data';
 import { useEffect, useState } from 'react';
+import SectionTop from './SectionTop/SectionTop';
+import SectionFeed from './sectionFeed/SectionFeed';
+import MyProfile from './Myprofile/MyProfile';
+import SuggestionMember from './seggestionMember/SuggestionMember';
+import { MEMBERS, NAME } from './data';
+import './main.scss';
 
 function MainJunho() {
   const [feed, setFeed] = useState([]);
   const [suggestion, setSuggestion] = useState([]);
+
   useEffect(
     () =>
       fetch('./data/feedimg.json')
         .then(response => response.json())
-        .then(data => {
-          setFeed(data);
-        }),
+        .then(setFeed),
     []
   );
+
   useEffect(
     () =>
       fetch('./data/suggetion.json')
         .then(response => response.json())
-        .then(data => {
-          setSuggestion(data);
-        }),
+        .then(setSuggestion),
     []
   );
+
   return (
     <>
       <nav>
