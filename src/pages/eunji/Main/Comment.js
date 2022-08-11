@@ -13,6 +13,7 @@ import React from 'react';
 const Comment = props => {
   return (
     <ul className="commentlist" value="feedComments">
+      <span className="name">eunji </span>
       {props.commentContent}
     </ul>
   );

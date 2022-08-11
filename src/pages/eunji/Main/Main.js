@@ -1,8 +1,8 @@
 import React from 'react';
-import './Main.scss';
 import { useState } from 'react';
-import Comment from './Comment';
 import MainNav from './MainNav';
+import Comment from './Comment';
+import './Main.scss';
 
 const MainEunji = () => {
   const [commentInput, setCommentInput] = useState('');
@@ -31,9 +31,11 @@ const MainEunji = () => {
               <div className="main-head-three">
                 <div className="main-head-profile">
                   <div className="main-head-img">
-                    <img alt="main_profile" src="./images/bong22.jpg" />
+                    <img
+                      alt="main_profile"
+                      src={require('/Users/eunjjo/Desktop/react/36-React-Westagram-3/src/assets/images/eunji/bong22.jpg')}
+                    />
                   </div>
-
                   <div className="main-head-text">
                     <p>bongbong123</p>
                   </div>
@@ -46,7 +48,10 @@ const MainEunji = () => {
             </div>
 
             <div className="main-img">
-              <img alt="main_bong" src="./images/bong22.jpg" />
+              <img
+                alt="main_bong"
+                src={require('/Users/eunjjo/Desktop/react/36-React-Westagram-3/src/assets/images/eunji/bong22.jpg')}
+              />
             </div>
 
             <div className="main-bottom">
@@ -58,11 +63,9 @@ const MainEunji = () => {
                 <div className="main-bottom-icon-comment">
                   <i className="fa-regular fa-comment" />
                 </div>
-
                 <div className="main-bottom-icon-share">
                   <i className="fa-solid fa-share" />
                 </div>
-
                 <div className="main-bottom-icon-bookmake-zone">
                   <div className="main-bottom-icon-bookmark">
                     <i className="fa-regular fa-bookmark" />
@@ -73,7 +76,10 @@ const MainEunji = () => {
               <div className="main-bottom-like">
                 <div className="main-bottom-like-box">
                   <div className="main-bottom-like-in">
-                    <img alt="main-bottom-img" src="./images/bong22.jpg" />
+                    <img
+                      alt="main-bottom-img"
+                      src={require('/Users/eunjjo/Desktop/react/36-React-Westagram-3/src/assets/images/eunji/bong22.jpg')}
+                    />
                   </div>
 
                   <div className="main-bottom-like-realtext">
@@ -97,9 +103,6 @@ const MainEunji = () => {
                 <div className="commentBox">
                   <div className="commentbox">
                     <ul className="commentlist" value="messageList">
-                      <span className="name">eunji </span>
-                      <span name="saying"> saying</span>
-
                       {feedComments.map(feed => {
                         return <Comment commentContent={feed} />;
                       })}
@@ -136,7 +139,10 @@ const MainEunji = () => {
           <div className="main-right-firstBox">
             <div className="main-right-firstBox-box">
               <div className="main-right-firstBox-img">
-                <img alt="main-right-img" src="./images/bong22.jpg" />
+                <img
+                  alt="main-right-img"
+                  src={require('/Users/eunjjo/Desktop/react/36-React-Westagram-3/src/assets/images/eunji/bong22.jpg')}
+                />
               </div>
               <div className="main-right-firstBox-text">
                 <div className="firstBox-text-bold">wecode_bootcamp</div>
@@ -154,7 +160,10 @@ const MainEunji = () => {
             <div className="main-right-secondBox-container">
               <div className="firstman">
                 <div className="firstman-img">
-                  <img alt="firstman-profile" src="./images/bong22.jpg" />
+                  <img
+                    alt="firstman-profile"
+                    src={require('/Users/eunjjo/Desktop/react/36-React-Westagram-3/src/assets/images/eunji/bong22.jpg')}
+                  />
                 </div>
                 <div className="firstman-text">
                   <div className="firstman-text-bold">_yum_s</div>
@@ -164,7 +173,10 @@ const MainEunji = () => {
 
               <div className="secondman">
                 <div className="secondman-img">
-                  <img alt="secondman-profile" src="./images/bong22.jpg" />
+                  <img
+                    alt="secondman-profile"
+                    src={require('/Users/eunjjo/Desktop/react/36-React-Westagram-3/src/assets/images/eunji/bong22.jpg')}
+                  />
                 </div>
 
                 <div className="secondman-text">
@@ -176,7 +188,10 @@ const MainEunji = () => {
 
               <div className="thirdman">
                 <div className="thirdman-img">
-                  <img alt="thirdman-profile" src="./images/bong22.jpg" />
+                  <img
+                    alt="thirdman-profile"
+                    src={require('/Users/eunjjo/Desktop/react/36-React-Westagram-3/src/assets/images/eunji/bong22.jpg')}
+                  />
                 </div>
 
                 <div className="thirdman-text">
@@ -202,7 +217,7 @@ const MainEunji = () => {
                   <div className="thirdBox-firstman-img">
                     <img
                       alt="thirdBox-firstman-profile"
-                      src="./images/bong22.jpg"
+                      src={require('/Users/eunjjo/Desktop/react/36-React-Westagram-3/src/assets/images/eunji/bong22.jpg')}
                     />
                   </div>
                   <div className="thirdBox-firstman-text">
@@ -220,7 +235,7 @@ const MainEunji = () => {
                   <div className="thirdBox-secondman-img">
                     <img
                       alt="thirdBox-secondman-profile"
-                      src="./images/bong22.jpg"
+                      src={require('/Users/eunjjo/Desktop/react/36-React-Westagram-3/src/assets/images/eunji/bong22.jpg')}
                     />
                   </div>
                   <div className="thirdBox-secondman-text">
@@ -240,7 +255,7 @@ const MainEunji = () => {
                   <div className="thirdBox-thirdman-img">
                     <img
                       alt="thirdBox-thirdman-profile"
-                      src="./images/bong22.jpg"
+                      src={require('/Users/eunjjo/Desktop/react/36-React-Westagram-3/src/assets/images/eunji/bong22.jpg')}
                     />
                   </div>
                   <div className="thirdBox-thirdman-text">
