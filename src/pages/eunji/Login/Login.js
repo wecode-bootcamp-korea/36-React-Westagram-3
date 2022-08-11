@@ -126,7 +126,7 @@ const LoginEunji = () => {
           </div>
         </main>
 
-        <footer className="forget">비밀번호를 잊으셨나요?</footer>
+        <footer className="forget">비밀번호를 잊으셨나요? </footer>
       </article>
       <script type="text/javascript" src="./Login" />
     </div>
