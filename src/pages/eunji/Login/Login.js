@@ -1,46 +1,34 @@
-import React from 'react';
+import { useState, React } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.scss';
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
 
 const LoginEunji = () => {
   const [info, setInfo] = useState({
     userEmail: '',
     userPw: '',
   });
-  // const [textpw, setTextpw] = useState('');
-  const [isActive, setIsActive] = useState(false);
-
-  console.log(info);
-  // console.log(info.userEmail);
-  // const onChangeid = e => {
-  //   setTextid(e.target.value);
-  // };
-
-  // const onChangepw = e => {
-  //   setTextpw(e.target.value);
-  // };
-
-  const passed = () => {
-    info.userEmail.includes('@') &&
-    info.userEmail.length > 5 &&
-    info.userPw.length > 5
-      ? setIsActive(true)
-      : setIsActive(false);
-  };
 
   const onChangeinfo = e => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
   };
 
+  const passed =
+    info.userEmail.includes('@') &&
+    info.userEmail.length > 5 &&
+    info.userPw.length > 5;
+
   const navigate = useNavigate();
-  const goToMain = () => {
-    navigate('/mainEunji');
+  const goToMain = e => {
+    if (e.key === 'Enter') {
+      navigate('/mainEunji');
+    }
   };
 
+  // TODO : 월요일에 실습 해보려고 남겨둔 코드
+
   // function dataSend(e) {
-  //   e.preventDefault();
+  //   e.preventDefault(); // 폼태그가 없어서 없어두 댐
   //   fetch('http://10.58.6.117:3000/auth/signup', {
   //     method: 'POST',
   //     headers: {
@@ -52,10 +40,17 @@ const LoginEunji = () => {
   //     }),
   //   })
   //     .then(response => response.json())
-  //     .then(data => console.log('data', data));
+  //     .then(data =>{
+  //       if(data.message === "SUCCESS"){
+  //         navigate('/mainEunji')
+  //       }
+  //     };
   // }
+
   // function dataSend(e) {
-  //   e.preventDefault();
+
+  //   if(e.key === "Enter")
+
   //   fetch('http://10.58.6.117:3000/auth/signin', {
   //     method: 'POST',
   //     headers: {
@@ -86,12 +81,11 @@ const LoginEunji = () => {
         </nav>
 
         <main className="box">
-          <div className="put">
+          <form className="put">
             <input
               type="text"
               value={info.userEmail}
               onChange={onChangeinfo}
-              onKeyUp={passed}
               name="userEmail"
               placeholder="전화번호, 사용자 이름 또는 이메일"
             />
@@ -100,22 +94,20 @@ const LoginEunji = () => {
               type="password"
               value={info.userPw}
               onChange={onChangeinfo}
-              onKeyUp={passed}
               name="userPw"
               placeholder="비밀번호"
             />
-            {/* <Link to="./Main"> */}
+
             <button
               id="button"
               type="button"
-              style={isActive ? { opacity: 1 } : { opacity: 0.5 }}
-              onClick={goToMain}
+              onKeyUp={goToMain}
+              disabled={passed}
             >
               {' '}
               로그인
             </button>
-            {/* </Link> */}
-          </div>
+          </form>
 
           <div className="or">
             <div className="orThree">
@@ -128,7 +120,6 @@ const LoginEunji = () => {
 
         <footer className="forget">비밀번호를 잊으셨나요? </footer>
       </article>
-      <script type="text/javascript" src="./Login" />
     </div>
   );
 };
