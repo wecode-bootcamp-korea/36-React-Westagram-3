@@ -1,0 +1,59 @@
+.suggestion {
+  position: absolute;
+  top: 97px;
+  color: gray;
+}
+
+.allShow {
+  position: absolute;
+  top: 97px;
+  left: 200px;
+  font-weight: 700;
+}
+
+.suggestionLs {
+  position: absolute;
+  top: 130px;
+  margin: 5px;
+
+  .suggestionLs_1 > span,
+  .suggestionLs_2 > span,
+  .suggestionLs_3 > span,
+  .suggestionLs_4 > span,
+  .suggestionLs_5 > span {
+    width: 32px;
+    height: 32px;
+    margin: 5px;
+    border-radius: 16px;
+    margin-left: 45px;
+    font-weight: 700;
+  }
+
+  .suggestion_style {
+    width: 32px;
+    height: 32px;
+    margin: 5px;
+    border-radius: 16px;
+    background-size: cover;
+  }
+
+  .suggestionLs_1 {
+    background-image: url('../../../../assets/images/junho/suggestion1.jpg');
+  }
+
+  .suggestionLs_2 {
+    background-image: url('../../../../assets/images/junho/suggestion2.jpg');
+  }
+
+  .suggestionLs_3 {
+    background-image: url('../../../../assets/images/junho/suggestion3.jpg');
+  }
+
+  .suggestionLs_4 {
+    background-image: url('../../../../assets/images/junho/suggestion4.jpg');
+  }
+
+  .suggestionLs_5 {
+    background-image: url('../../../../assets/images/junho/suggestion5.jpg');
+  }
+}
