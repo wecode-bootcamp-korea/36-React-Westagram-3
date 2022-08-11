@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import PostTop from '../PostTop/PostTop';
 import PostNav from '../PostNav/PostNav';
 import PostContent from '../PostContent/PostContent';
 
-function Posts() {
-  const [posts, setPosts] = useState([]);
+function Posts({ posts }) {
   const [comment, setComment] = useState('');
   const [commentArray, setCommentArray] = useState([]);
 
@@ -17,21 +16,11 @@ function Posts() {
     setComment('');
   };
 
-  useEffect(() => {
-    fetch('./data/posts.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setPosts(data);
-      });
-  }, []);
-
   return (
     <>
       {posts.map(post => (
         <div key={post.id} className="post">
-          <PostTop />
+          <PostTop img="./" user={post.username} />
           <img className="post-image" src={post.img} alt={post.alt} />
           <PostNav />
           <PostContent
@@ -39,6 +28,8 @@ function Posts() {
             hash={post.hash}
             likes={post.likes}
             comments={commentArray}
+            user={post.user}
+            time={post.time}
           />
           <form className="comments-wrapper" onSubmit={onSubmit}>
             <input

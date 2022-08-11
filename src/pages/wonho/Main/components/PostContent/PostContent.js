@@ -1,6 +1,6 @@
 import Comments from '../Comments/Comments';
 
-function PostContent({ title }, { hash }, { likes }, { comments }) {
+function PostContent({ title, user, likes, time, comments, hash }) {
   return (
     <div className="post-content-wrap">
       <div className="likes">
@@ -16,7 +16,7 @@ function PostContent({ title }, { hash }, { likes }, { comments }) {
       </div>
       <div className="post-content">
         <p>
-          <span className="bold">c_wonho</span> {title}
+          <span className="bold">{user}</span> {title}
         </p>
         <p>.</p>
         <p className="hashtag">{hash}</p>
@@ -27,7 +27,7 @@ function PostContent({ title }, { hash }, { likes }, { comments }) {
           })}
         </div>
       </div>
-      <p className="grayfont post-time">30분 전</p>
+      <p className="grayfont post-time">{time}</p>
     </div>
   );
 }

@@ -1,11 +1,11 @@
-function PostTop() {
+function PostTop({ img, user }) {
   return (
     <div className="post-top">
       <div className="user">
         <div className="profile-picture">
-          <img src="./images/IMG_1937.JPG" alt=" " />
+          <img src={img} alt=" " />
         </div>
-        <p className="username">c_wonho</p>
+        <p className="username">{user}</p>
       </div>
       <a href=" ">
         <i className="fa-solid fa-ellipsis" />

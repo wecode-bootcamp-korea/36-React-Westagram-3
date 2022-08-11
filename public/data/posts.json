@@ -1,18 +1,24 @@
 [
   {
     "id": 1,
+    "profile": "./images/wonho/IMG_1937.JPG",
+    "username": "c_wonho",
     "img": "./images/welshcorgi.jpg",
     "alt": "welshcorgi",
     "title": "Corgi",
     "hash": "#welshcorgi #shortlegs #butt",
-    "likes": "30,000"
+    "likes": "30,000",
+    "time": "30분전"
   },
   {
     "id": 2,
+    "profile": "./images/wonho/uniyul.jpg",
+    "username": "iam_uniyul",
     "img": "./images/dachshund.jpg",
     "alt": "dachshund",
     "title": "Dachshund",
     "hash": "#dachshund #shortlegs #hotdog",
-    "likes": "25,000"
+    "likes": "25,000",
+    "time": "40분전"
   }
 ]

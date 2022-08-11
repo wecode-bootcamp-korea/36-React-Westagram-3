@@ -22,6 +22,45 @@ function LoginWonho() {
     navigate('/main');
   };
 
+  // 회원가입
+  /*
+    const handleLogin = () => {
+
+        fetch( 'http://10.58.0.32:3000/users/signin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: id, password: pw}),
+        })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }
+*/
+
+  // 로그인
+  /*      const handleLogin = () => {
+
+        fetch( 'http://10.58.0.32:3000/users/signin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: id, password: pw}),
+        })
+        .then((response) => {
+            if(response.ok === true) {
+                return response.json();
+            }
+            throw new Error('통신실패');
+        })
+        .catch((error) => console.log(error))
+        .then((data) => {
+            if(data.message === "success") {
+                localStorage.setItem('token', data.token);
+                goToMain();
+            } else if(data.message === "invalid") {
+                alert('아이디 또는 비밀번호를 확인해주세요');
+            }
+        });
+    */
+
   return (
     <div className="container">
       <div className="inner-container">
