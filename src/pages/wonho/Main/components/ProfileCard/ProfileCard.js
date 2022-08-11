@@ -1,3 +1,5 @@
+import '../ProfileCard/ProfileCard.scss';
+
 function ProfileCard() {
   return (
     <div className="profile-card">

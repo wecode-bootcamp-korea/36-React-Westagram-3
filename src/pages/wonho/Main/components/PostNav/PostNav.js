@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../PostNav/PostNav.scss';
 
 function PostNav() {
   const [heart, setHeart] = useState(

@@ -1,3 +1,5 @@
+import '../Nav/Nav.scss';
+
 const NAV_LIST = [
   {
     id: 1,

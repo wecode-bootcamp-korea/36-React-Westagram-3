@@ -1,18 +1,11 @@
-import '../../../styles/common.scss';
-import './Main.scss';
-import './components/Nav/Nav.scss';
-import './components/PostTop/PostTop.scss';
-import './components/PostNav/PostNav.scss';
-import './components/PostContent/PostContent.scss';
-import './components/ProfileCard/ProfileCard.scss';
-import './components/Stories/Stories.scss';
-import './components/Suggestions/Suggestions.scss';
+import { useState, useEffect } from 'react';
 import Nav from './components/Nav/Nav';
 import Posts from './components/Posts/Posts';
 import ProfileCard from './components/ProfileCard/ProfileCard';
 import Stories from './components/Stories/Stories';
 import Suggestions from './components/Suggestions/Suggestions';
-import { useState, useEffect } from 'react';
+import '../../../styles/common.scss';
+import './Main.scss';
 
 function MainWonho() {
   const [posts, setPosts] = useState([]);
@@ -24,9 +17,7 @@ function MainWonho() {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(data => {
-        setSuggestions(data);
-      });
+      .then(setSuggestions);
   }, []);
 
   useEffect(() => {
@@ -34,9 +25,7 @@ function MainWonho() {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(data => {
-        setStories(data);
-      });
+      .then(setStories);
   }, []);
 
   useEffect(() => {
@@ -44,9 +33,7 @@ function MainWonho() {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(data => {
-        setPosts(data);
-      });
+      .then(setPosts);
   }, []);
 
   return (

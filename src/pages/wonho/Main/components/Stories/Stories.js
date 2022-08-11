@@ -1,3 +1,5 @@
+import '../Stories/Stories.scss';
+
 function Stories({ stories }) {
   return (
     <div className="stories-wrapper">

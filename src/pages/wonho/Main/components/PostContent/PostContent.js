@@ -1,4 +1,5 @@
 import Comments from '../Comments/Comments';
+import '../PostContent/PostContent.scss';
 
 function PostContent({ title, user, likes, time, comments, hash }) {
   return (

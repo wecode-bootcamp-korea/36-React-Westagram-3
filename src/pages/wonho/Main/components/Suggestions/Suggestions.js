@@ -1,3 +1,5 @@
+import '../Suggestions/Suggestions.scss';
+
 function Suggestions({ suggestions }) {
   return (
     <div className="suggestions-wrapper">

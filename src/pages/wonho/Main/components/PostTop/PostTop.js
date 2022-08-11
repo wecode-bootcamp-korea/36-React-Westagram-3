@@ -1,3 +1,5 @@
+import '../PostTop/PostTop.scss';
+
 function PostTop({ img, user }) {
   return (
     <div className="post-top">
