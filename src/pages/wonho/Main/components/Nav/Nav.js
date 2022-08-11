@@ -23,7 +23,11 @@ function Nav() {
     <div className="header-wrap">
       <div className="header-left">
         <a href=" ">
-          <img className="homeLogo" src="./images/instagram.png" alt=" " />
+          <img
+            className="homeLogo"
+            src="./images/wonho/instagram.png"
+            alt="instagramLogo"
+          />
         </a>
         <h1>Westagram</h1>
       </div>

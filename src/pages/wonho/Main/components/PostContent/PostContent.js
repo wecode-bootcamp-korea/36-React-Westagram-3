@@ -1,13 +1,13 @@
 import Comments from '../Comments/Comments';
 import '../PostContent/PostContent.scss';
 
-function PostContent({ title, user, likes, time, comments, hash }) {
+function PostContent({ title, username, likes, time, comments, hash }) {
   return (
     <div className="post-content-wrap">
       <div className="likes">
         <div className="likes-user">
           <div className="likes-profile">
-            <img src="./images/wecode.jpg" alt=" " />
+            <img src="./images/wonho/wecode.jpg" alt="wecode" />
           </div>
           <p className="username">
             <span className="bold">wecode_bootcamp</span>님{' '}
@@ -17,7 +17,7 @@ function PostContent({ title, user, likes, time, comments, hash }) {
       </div>
       <div className="post-content">
         <p>
-          <span className="bold">{user}</span> {title}
+          <span className="bold">{username}</span> {title}
         </p>
         <p>.</p>
         <p className="hashtag">{hash}</p>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PostTop from '../PostTop/PostTop';
 import PostNav from '../PostNav/PostNav';
 import PostContent from '../PostContent/PostContent';
+import '../Posts/Posts.scss';
 
 function Posts({ posts }) {
   const [comment, setComment] = useState('');
@@ -20,16 +21,16 @@ function Posts({ posts }) {
     <>
       {posts.map(post => (
         <div key={post.id} className="post">
-          <PostTop img="./" user={post.username} />
+          <PostTop img={post.profile} user={post.username} />
           <img className="post-image" src={post.img} alt={post.alt} />
           <PostNav />
           <PostContent
             title={post.title}
-            hash={post.hash}
+            username={post.username}
             likes={post.likes}
-            comments={commentArray}
-            user={post.user}
             time={post.time}
+            comments={commentArray}
+            hash={post.hash}
           />
           <form className="comments-wrapper" onSubmit={onSubmit}>
             <input

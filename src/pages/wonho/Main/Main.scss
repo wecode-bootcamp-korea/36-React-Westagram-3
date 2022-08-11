@@ -9,6 +9,10 @@
   top: 0;
   left: 0;
   background: white;
+  h1 {
+    font-family: 'Lobster', cursive;
+    color: #262626;
+  }
 }
 
 section {
@@ -29,6 +33,7 @@ p {
   width: 100%;
   margin-top: 60px;
   padding: 40px 0;
+  font-size: 12px;
 }
 
 .main-wrap {

@@ -5,7 +5,7 @@ function ProfileCard() {
     <div className="profile-card">
       <div className="profile-left">
         <div className="profile-status">
-          <img src="./images/IMG_1937.JPG" alt=" " />
+          <img src="./images/wonho/IMG_1937.JPG" alt=" " />
         </div>
         <div className="profile-names">
           <p className="username">c_wonho</p>
