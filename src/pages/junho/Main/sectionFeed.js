@@ -3,36 +3,20 @@ import OneChat from './OneChat';
 
 function SectionFeed({ img }) {
   const [chat, setChat] = useState('');
-  const [chatArr, setChatArr] = useState([]);
-  const [id, setId] = useState(1);
+  const [chatLis, setChatLis] = useState([]);
+  const [isvalid, setIsvalid] = useState('disabled');
   const chatting = e => {
     setChat(e.target.value);
   };
   const submitChat = e => {
     e.preventDefault();
-    chatLis.push({ id, chat });
-    setChatArr(
-      chatLis.map(x => {
-        return (
-          <div className="create" key={x.id}>
-            <p className="createP">juno :{x.chat}</p>
-            <button
-              className="createBtn"
-              onClick={e => {
-                const btn = e.target.parentElement;
-                btn.remove();
-              }}
-            >
-              삭제
-            </button>
-          </div>
-        );
-      })
-    );
+    const seconds = Math.floor(Date.now() / 1000);
+    setChatLis([...chatLis, { id: seconds, chat: chat }]);
     setChat('');
-    setId(id + 1);
   };
-  const [isvalid, setIsvalid] = useState('disabled');
+  const chatListDelete = e => {
+    setChatLis(chatLis.filter(x => x.id !== Number(e.target.parentElement.id)));
+  };
   return (
     <section className="feed">
       <div className="feedBox basic">
@@ -51,8 +35,13 @@ function SectionFeed({ img }) {
           <div className="hartClick">좋아요 2만개</div>
         </div>
         <div className="chat">
-          {chatArr.map(x => (
-            <OneChat chatArr={x} key={x.key} />
+          {chatLis.map(x => (
+            <OneChat
+              chatArr={x.chat}
+              key={x.id}
+              id={x.id}
+              del={chatListDelete}
+            />
           ))}
         </div>
         <form className="chatting" action="" onSubmit={submitChat}>
@@ -83,4 +72,4 @@ function SectionFeed({ img }) {
 }
 export default SectionFeed;
 
-const chatLis = [];
+// const chatLis = [];
