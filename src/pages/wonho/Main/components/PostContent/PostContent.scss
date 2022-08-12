@@ -3,22 +3,20 @@
 .post-content-wrap {
   flex-direction: column;
   padding: 0 18px;
-}
-
-.likes {
-  @include flex(null, center);
-  height: 30px;
-}
-
-.likes-user {
-  @include flex(null, center);
-  img {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+  .likes {
+    @include flex(null, center);
+    height: 30px;
   }
-  p {
-    margin-left: 5px;
+  .likes-user {
+    @include flex(null, center);
+    img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    p {
+      margin-left: 5px;
+    }
   }
 }
 
@@ -28,12 +26,11 @@
   p {
     margin-bottom: 5px;
   }
+  .hashtag {
+    color: #00376b;
+  }
 }
 
 .post-time {
   font-size: 10px;
-}
-
-.hashtag {
-  color: #00376b;
 }

@@ -3,15 +3,18 @@
 .header-wrap {
   @include flex(space-between, null);
   width: 50%;
-}
 
-.header-left {
-  h1 {
-    font-size: 24px;
-    display: inline-block;
-    border-left: 1.4px solid #dbdbdb;
-    padding-left: 10px;
-    margin-left: 10px;
+  .header-left {
+    h1 {
+      font-size: 24px;
+      display: inline-block;
+      border-left: 1.4px solid #dbdbdb;
+      padding-left: 10px;
+      margin-left: 10px;
+    }
+    .homeLogo {
+      height: 24px;
+    }
   }
 }
 
@@ -37,10 +40,6 @@
     top: 5px;
     left: 10px;
   }
-}
-
-.homeLogo {
-  height: 24px;
 }
 
 .nav-items {

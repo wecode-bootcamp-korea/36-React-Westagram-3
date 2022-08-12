@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../Nav/Nav.scss';
 
 const NAV_LIST = [
@@ -22,13 +23,13 @@ function Nav() {
   return (
     <div className="header-wrap">
       <div className="header-left">
-        <a href=" ">
+        <Link to="/mainWonho">
           <img
             className="homeLogo"
             src="./images/wonho/instagram.png"
             alt="instagramLogo"
           />
-        </a>
+        </Link>
         <h1>Westagram</h1>
       </div>
       <div className="header-center">
@@ -39,9 +40,9 @@ function Nav() {
         <ul className="nav-items">
           {NAV_LIST.map(navList => (
             <li key={navList.id}>
-              <a href=" ">
+              <Link to="/mainWonho">
                 <img src={navList.src} alt={navList.alt} />
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

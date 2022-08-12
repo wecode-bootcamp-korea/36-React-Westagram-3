@@ -13,25 +13,19 @@ function MainWonho() {
   const [stories, setStories] = useState([]);
 
   useEffect(() => {
-    fetch('./data/suggestions.json', {
-      method: 'GET',
-    })
+    fetch('./data/suggestions.json')
       .then(res => res.json())
       .then(setSuggestions);
   }, []);
 
   useEffect(() => {
-    fetch('./data/stories.json', {
-      method: 'GET',
-    })
+    fetch('./data/stories.json')
       .then(res => res.json())
       .then(setStories);
   }, []);
 
   useEffect(() => {
-    fetch('./data/posts.json', {
-      method: 'GET',
-    })
+    fetch('./data/posts.json')
       .then(res => res.json())
       .then(setPosts);
   }, []);
