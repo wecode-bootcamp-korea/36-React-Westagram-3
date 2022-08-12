@@ -1,0 +1,46 @@
+@import '../../../../../styles/variables.scss';
+
+.stories-wrapper {
+  flex-direction: column;
+  height: 200px;
+  padding: 20px 20px 0px 20px;
+  border: 1.4px solid #dbdbdb;
+  border-radius: 2px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: white;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .stories-header {
+    @include flex(space-between, null);
+    margin-bottom: 10px;
+    background: white;
+  }
+  .stories {
+    @include flex(flex-start, center);
+    margin-bottom: 5px;
+  }
+  .profile-status {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, rgb(255, 230, 0), rgb(255, 0, 128) 80%);
+    overflow: hidden;
+    border-radius: 50%;
+    padding: 2px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid #fff;
+    }
+  }
+
+  .profile-names {
+    margin-left: 15px;
+    .username {
+      font-weight: bold;
+    }
+  }
+}

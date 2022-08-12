@@ -1,3 +1,17 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.grayfont {
+  color: #8e8e8e;
 }

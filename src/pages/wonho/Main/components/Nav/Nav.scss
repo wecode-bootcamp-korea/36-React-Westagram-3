@@ -1,0 +1,55 @@
+@import '../../../../../styles/variables.scss';
+
+.header-wrap {
+  @include flex(space-between, null);
+  width: 50%;
+
+  .header-left {
+    h1 {
+      font-size: 24px;
+      display: inline-block;
+      border-left: 1.4px solid #dbdbdb;
+      padding-left: 10px;
+      margin-left: 10px;
+    }
+    .homeLogo {
+      height: 24px;
+    }
+  }
+}
+
+.header-center {
+  width: 260px;
+  input {
+    width: 17%;
+    height: 30px;
+    font-size: 12px;
+    opacity: 0.7;
+    border: 1.4px solid #dbdbdb;
+    border-radius: 5px;
+    background-color: #fafafa;
+    padding: 5px 0;
+    padding-left: 25px;
+    position: absolute;
+  }
+  i {
+    position: relative;
+    font-size: 12px;
+    color: gray;
+    opacity: 0.7;
+    top: 5px;
+    left: 10px;
+  }
+}
+
+.nav-items {
+  li {
+    display: inline-block;
+    a {
+      padding: 0 15px;
+      img {
+        height: 24px;
+      }
+    }
+  }
+}

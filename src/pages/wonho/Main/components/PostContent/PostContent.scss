@@ -1,0 +1,36 @@
+@import '../../../../../styles/variables.scss';
+
+.post-content-wrap {
+  flex-direction: column;
+  padding: 0 18px;
+  .likes {
+    @include flex(null, center);
+    height: 30px;
+  }
+  .likes-user {
+    @include flex(null, center);
+    img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    p {
+      margin-left: 5px;
+    }
+  }
+}
+
+.post-content {
+  margin-left: 2px;
+  width: 100%;
+  p {
+    margin-bottom: 5px;
+  }
+  .hashtag {
+    color: #00376b;
+  }
+}
+
+.post-time {
+  font-size: 10px;
+}
