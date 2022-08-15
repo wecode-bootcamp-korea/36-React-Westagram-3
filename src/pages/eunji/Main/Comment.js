@@ -1,20 +1,17 @@
 import React from 'react';
 
-// class Comment extends Component {
-//     render() {
-//         return(
-//             <ul className="commentlist" value="feedComments">
-//                 {this.props.commentContent}
-//             </ul>
-//         )
-//     }
-// }
+const Comment = feed => {
+  const eraseComment = e => {
+    feed.remove();
+  };
 
-const Comment = props => {
   return (
-    <ul className="commentlist" value="feedComments">
+    <ul className="commentlist">
       <span className="name">eunji </span>
-      {props.commentContent}
+      <button className="commentlist-btn" onClick={eraseComment}>
+        x
+      </button>
+      {feed.commentContent}
     </ul>
   );
 };

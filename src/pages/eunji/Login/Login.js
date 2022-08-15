@@ -20,9 +20,7 @@ const LoginEunji = () => {
 
   const navigate = useNavigate();
   const goToMain = e => {
-    if (e.key === 'Enter') {
-      navigate('/mainEunji');
-    }
+    navigate('/mainEunji');
   };
 
   // TODO : 월요일에 실습 해보려고 남겨둔 코드
@@ -101,8 +99,8 @@ const LoginEunji = () => {
             <button
               id="button"
               type="button"
-              onKeyUp={goToMain}
-              disabled={passed}
+              onClick={goToMain}
+              disabled={!passed}
             >
               {' '}
               로그인
